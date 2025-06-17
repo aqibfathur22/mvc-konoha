@@ -1,0 +1,123 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import 'animate.css';
+
+@theme {
+    --font-Inter: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-Inter);
+}
+
+option {
+    @apply text-slate-700 font-bold;
+}
+
+.z-999 {
+    z-index: 999;
+}
+
+.hamburger-menu {
+    @apply w-6 h-0.5 block bg-slate-800 my-1.5 rounded-full;
+}
+
+.hamburger-active > span:nth-child(1) {
+    @apply rotate-45;
+}
+
+.hamburger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+    @apply -rotate-45;
+}
+
+.nav-fix {
+    @apply bg-white/70 fixed z-[999] shadow-sm backdrop-blur-sm
+    transition-all duration-300 ease-in-out;
+}
+
+.label-lg {
+    @apply lg:text-base;
+}
+
+.input-lg {
+    @apply lg:h-10 lg:rounded-2xl lg:text-base;
+}
+
+.swiper {
+    @apply px-2 max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl;
+}
+
+.swiper-wrapper {
+    @apply mb-8;
+}
+
+.swiper-pagination-bullet {
+    @apply bg-slate-700;
+}
+
+.swiper-pagination-bullet-active {
+    @apply bg-sky-500;
+}
+
+.dropdown-style {
+    @apply text-sm lg:text-base font-medium text-slate-700 cursor-pointer 
+    hover:text-sky-500 transition-all duration-500;
+}
+
+.nav-hamburger-style {
+    @apply text-slate-700 font-medium hover:text-sky-500 hover:transition-all duration-500;
+}
+
+.nav-bar-style {
+    @apply text-slate-700 font-medium hover:text-sky-400 transition-all duration-500;
+}
+
+.section-title {
+    @apply pt-18 lg:pt-28 pb-12 lg:pb-18 text-center text-xl lg:text-3xl font-medium;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.7s ease-in-out forwards;
+}
+
+.text-table {
+    @apply md:px-6 py-5 text-left text-xs md:text-sm xl:text-base text-slate-700;
+}
+
+.header-table {
+    @apply px-6 py-5 text-left text-sm xl:text-base font-semibold text-gray-700;
+}
+
+/* .notfound-svg {
+    fill: #fff;
+    filter: drop-shadow(0px 0px 58px rgba(141, 217, 255, 0.51));
+} */
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.bg-hero {
+    background-image: url('assets/konoha.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.bg-footer {
+    background-image: url('assets/footer.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
