@@ -5,7 +5,7 @@ class Home_controller extends Controllers {
         $data['title'] = "Konoha - Pengaduan";
         $data['kategori'] = $this->model('Pengaduan_model')->getKategori(); 
         $data['dataStatistik'] = $this->model('Statistik_model')->getStatistik($data);
-        $data['berita'] = $this->model('Berita_model')->getBerita();
+        $data['berita'] = $this->model('Berita_model')->getBeritaAll();
 
         $this->view("templates/header", $data);
         $this->view("home/index", $data);
@@ -22,15 +22,15 @@ class Home_controller extends Controllers {
             exit;
         } 
     }
-
-    public function detailBerita($id_berita) {
     
-        $data['title'] = "Konoha - Berita";
-        $data['berita'] = $this->model('Berita_model')->getBeritaById($id_berita);
+    public function detailBerita($id_berita) {
+        $data['title'] = "Konoha - Pengaduan";
+        $data['detailBerita'] = $this->model('Berita_model')->getBerita($id_berita);
+        $data['berita'] = $this->model('Berita_model')->getSugestion($id_berita);
 
         $this->view("templates/header", $data);
         $this->view("home/detailBerita", $data);
-        $this->view("templates/footer");
+        $this->view("templates/footer", );
     }
 }
 

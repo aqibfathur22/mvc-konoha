@@ -1,30 +1,36 @@
 <?php 
 
-class Berita_Model {
+class Berita_model {
     private $conn;
     private $table_name = "tb_berita";
-    
+
     public function __construct() {
         $this->conn = new Database();
     }
 
-    public function getBerita() {
+    public function getBeritaAll() {
+        $query = "SELECT * FROM " . $this->table_name;  
 
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY tanggal_berita ASC limit 5";
-            
         $this->conn->query($query);
-        return $this->conn->getAll();
-
+        return $this->conn->getAll();    
     }
 
-    public function getBeritaById($id_berita) {
-        
-        $query = "SELECT * FROM " . $this->table_name . " WHERE id_berita = :id_berita";
+    public function getBerita($id_berita) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id_berita = :id_berita LIMIT 4";
+
         $this->conn->query($query);
 
         $this->conn->bindParam(':id_berita', $id_berita);
-        
-        return $this->conn->get();
+        return $this->conn->get();   
+    }
+    
+    public function getSugestion($id_berita) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id_berita != :id_berita LIMIT 2";
+    
+        $this->conn->query($query);
+
+        $this->conn->bindParam(':id_berita', $id_berita); // <--- ini WAJIB
+        return $this->conn->getAll();    
     }
 }
 

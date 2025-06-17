@@ -1,62 +1,89 @@
 <main class="p-4 overflow-y-auto flex-1">
-    <div class="grid grid-cols-1">
-        <div class="bg-slate-50 border rounded-lg p-4 shadow-md">
-            <h2 class="font-bold text-xl mb-5 text-slate-950">Data Pengaduan</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 mt-4">
-                <button class="p-4 bg-sky-600 shadow-md rounded-lg text-white font-semibold">Data 1</button>
-                <button class="p-4 bg-gradient-to-r from-sky-700 to-white rounded-lg text-white font-semibold">Data 2</button>
-                <button class="p-4 bg-white shadow-md rounded-lg text-sky-600 font-semibold">Data 3</button>
-            </div>
-
-            <div class="mt-2 space-y-4">
-                <div class="rounded-lg p-4 bg-white text-slate-800 shadow-md">
-                    <p><span class="font-semibold text-sky-400">Nama Pelapor:</span> Budiono Siregar</p>
-                    <p><span class="font-semibold text-red-400">Aduan:</span> Kapal Bocor Halus</p>
-                    <p><span class="font-semibold text-green-400">Tanggal:</span> 2025-06-15</p>
-                </div>
-
-                <div class="rounded-lg p-4 bg-white text-slate-800 shadow-sm">
-                    <p><span class="font-semibold text-sky-400">Nama Pelapor: Budi Speed </span></p>
-                    <p><span class="font-semibold text-red-400">Aduan: Ban Motor Kempes </span></p>
-                    <p><span class="font-semibold text-green-400">Tanggal: 2025-06-14 </span></p>
-                </div>
-
-                <div class="rounded-lg p-4 bg-white text-slate-800 shadow-sm">
-                    <p><span class="font-semibold">Nama Pelapor:</span><span class="text-sky-400"> Budi Yaping </span></p>
-                    <p><span class="font-semibold">Aduan:</span><span class="text-red-400"> Tetangga Marah-marah </span></p>
-                    <p><span class="font-semibold">Tanggal:</span><span class="text-green-400"> 2025-06-10 </span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <a href="admin_statistik.html">
         <div class="bg-slate-50 border rounded-lg p-4 shadow-md mt-5">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 my-8">
-                <!-- Total Pengaduan -->
-                <div class="bg-white rounded-xl shadow-md p-4 text-center border">
-                    <h3 class="text-slate-700 font-semibold">Total Pengaduan</h3>
-                    <p class="text-3xl font-bold text-purple-600">3</p>
+            <form action="" method="post">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Total -->
+                    <button name="total" cursor="pointer" class="hover:scale-103 focus:bg-sky-50 bg-white rounded-2xl shadow-lg p-6 border-2 border-slate-100 hover:shadow-xl transition-all duration-700 ease-in-out">     
+                        <h3 class="text-xl font-semibold text-slate-700">Total Pengaduan</h3>
+                        <p class="text-4xl font-bold text-indigo-600 mt-2">
+                            <?= $data['dataStatistik']['total'] ?? 0 ?>
+                        </p>
+                    </button>
+                    <!-- Pending -->
+                    <button name="menunggu" class="hover:scale-103 focus:bg-sky-50 bg-white rounded-2xl shadow-lg p-6 border-2 border-slate-100 hover:shadow-xl transition-all duration-700 ease-in-out">
+                        <h3 class="text-xl font-semibold text-slate-700">Menunggu</h3>
+                        <p class="text-4xl font-bold text-yellow-500 mt-2">
+                            <?= $data['dataStatistik']['menunggu'] ?? 0 ?>
+                        </p>
+                    </button>
+                    <!-- Diproses -->
+                    <button name="diproses" cursor="pointer" class="hover:scale-103 focus:bg-sky-50 bg-white rounded-2xl shadow-lg p-6 border-2 border-slate-100 hover:shadow-xl transition-all duration-700 ease-in-out">
+                        <h3 class="text-xl font-semibold text-slate-700">Diproses</h3>
+                        <p class="text-4xl font-bold text-blue-500 mt-2">
+                                <?= $data['dataStatistik']['diproses'] ?? 0 ?>
+                        </p>
+                    </button>
+                    <!-- Selesai -->
+                    <button name="selesai" cursor="pointer" class="hover:scale-103 focus:bg-sky-50 bg-white rounded-2xl shadow-lg p-6 border-2 border-slate-100 hover:shadow-xl transition-all duration-700 ease-in-out">
+                        <h3 class="text-xl font-semibold text-slate-700">Selesai</h3>
+                        <p class="text-4xl font-bold text-green-500 mt-2">
+                                <?= $data['dataStatistik']['selesai'] ?? 0 ?>
+                        </p>
+                    </button>
                 </div>
+            </form>
 
-                <!-- Pending -->
-                <div class="bg-white rounded-xl shadow-md p-4 text-center border">
-                    <h3 class="text-slate-700 font-semibold">Pending</h3>
-                    <p class="text-3xl font-bold text-yellow-500">1</p>
-                </div>
+            <table class="w-full text-slate-800 border border-sky-800 rounded-lg overflow-hidden shadow-md mb-4">
+                <thead class="bg-sky-800 text-white">
+                    <tr>
+                        <th class="pl-16 py-2 w-96 text-left">Nama Pelapor</th>
+                        <th class="px-4 py-2 w-96 text-left">Aduan</th>
+                        <th class="px-4 py-2 w-62 text-center">Tanggal</th>
+                        <th class="px-4 py-2 w-52 text-center">Status</th>
+                        <th class="pr-16 py-2 w-52 text-center">Detail</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-slate-200">
+                    <?php if (!empty($data['dataPengaduan'])) : ?>
+                        <?php foreach ($data['dataPengaduan'] as $aduan): ?>
+                        <tr>
+                            <td class="pl-16 py-4"><?= htmlspecialchars($aduan['nama_pelapor']) ?></td>
+                            <td class="px-4 py-4"><?= htmlspecialchars($aduan['judul_pengaduan']) ?></td>
+                            <td class="px-4 py-4 text-center"><?= htmlspecialchars($aduan['tanggal_dikirim']) ?></td>
+                            <td class="px-4 py-4 text-center">
+                                <?php 
+                                    if ($aduan['status'] === 'menunggu') {
+                                        $statusClass = 'bg-amber-100 text-amber-800 px-[10px]';
+                                    } elseif ($aduan['status'] === 'diproses') {
+                                        $statusClass = 'bg-sky-100 text-sky-800 px-[16px]';
+                                    } elseif ($aduan['status'] === 'selesai') {
+                                        $statusClass = 'bg-green-100 text-green-800 px-[21px]';
+                                    } elseif ($aduan['status'] === 'ditolak') {
+                                        $statusClass = 'bg-red-100 text-red-800 px-[23px]';
+                                    }
+                                ?>
+                                <span class="<?= $statusClass ?> text-sm font-medium py-1 rounded-full">
+                                    <?= htmlspecialchars($aduan['status']) ?>
+                                </span>
+                            </td>
+                            <td class="pr-16 py-4 justify-center text-center">
+                                <a
+                                    href="<?=BASEURL?>/Beranda_controller/detail/<?= $aduan['id_pengaduan'] ?>"
+                                    class="px-4 py-1 bg-yellow-400 hover:bg-yellow-500 rounded-xl flex-1 h-7 w-15 text-center text-white">
+                                    Detail
+                                </a>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
 
-                <!-- Diproses -->
-                <div class="bg-white rounded-xl shadow-md p-4 text-center border">
-                    <h3 class="text-slate-700 font-semibold">Diproses</h3>
-                    <p class="text-3xl font-bold text-blue-600">1</p>
-                </div>
-
-                <!-- Selesai -->
-                <div class="bg-white rounded-xl shadow-md p-4 text-center border">
-                    <h3 class="text-slate-700 font-semibold">Selesai</h3>
-                    <p class="text-3xl font-bold text-green-600">1</p>
-                </div>
-            </div>
+                        <?php else: ?>
+                        <tr>
+                            <td colspan="4" class="py-4 px-6 text-center text-slate-500">Belum ada pengaduan yang selesai.</td>
+                        </tr>
+                    <?php endif; ?>
+                </tbody>    
+            </table>
         </div>
     </a>
 </main>

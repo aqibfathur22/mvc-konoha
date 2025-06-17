@@ -48,6 +48,13 @@
                             </div>
                             Profil Desa
                         </a>
+                        <a  href="<?= BASEURL; ?>/Kategori_controller"
+                            class="<?= $data['kategoriNav'] ?>">
+                            <div class="w-5 h-5">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            </div> 
+                            Kategori
+                        </a>
                     </nav>
                 </div>
                 <div class="mb-2">

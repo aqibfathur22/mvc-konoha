@@ -10,7 +10,7 @@
                         <!-- Address -->
                         <div class="flex mx-6 pt-6 mb-4">
                             <div class="w-[60%] md:w-[50%] lg:w-[40%] xl:w-[25%] xl:mr-8 mr-4 mt-2">
-                                <img src="src/assets/logo.jpeg" class="rounded-full" />
+                                <img src="<?=BASEURL?>/src/assets/logo.jpeg" class="rounded-full" />
                             </div>
                             <div class="flex flex-col">
                                 <h2 class="font-normal xl:font-semibold text-sm lg:text-lg text-white mb-1">Pemerintah Desa Konoha</h2>
@@ -32,19 +32,19 @@
                             </div>
                             <div class="flex flex-row items-center gap-3 lg:gap-5 ml-2">
                                 <a href="">
-                                    <img src="icon/instagram.svg" class="w-8 lg:w-12" />
+                                    <img src="<?=BASEURL?>/src/assets/icon/instagram.svg" class="w-8 lg:w-12" />
                                 </a>
                                 <a href="">
-                                    <img src="icon/youtube.svg" class="w-8 lg:w-12" />
+                                    <img src="<?=BASEURL?>/src/assets/icon/youtube.svg" class="w-8 lg:w-12" />
                                 </a>
                                 <a href="">
-                                    <img src="icon/x.svg" class="w-8 lg:w-12" />
+                                    <img src="<?=BASEURL?>/src/assets/icon/x.svg" class="w-8 lg:w-12" />
                                 </a>
                                 <a href="">
-                                    <img src="icon/facebook.svg" class="w-8 lg:w-12" />
+                                    <img src="<?=BASEURL?>/src/assets/icon/facebook.svg" class="w-8 lg:w-12" />
                                 </a>
                                 <a href="">
-                                    <img src="icon/tiktok.svg" class="w-8 lg:w-12" />
+                                    <img src="<?=BASEURL?>/src/assets/icon/tiktok.svg" class="w-8 lg:w-12" />
                                 </a>
                             </div>
                         </div>
@@ -54,22 +54,19 @@
                         <h2 class="font-normal xl:font-semibold text-sm lg:text-lg text-white mb-3 lg:mb-5">Menu Utama</h2>
                         <div class="flex flex-col gap-4 text-white font-light xl:font-normal text-xs lg:text-base ml-2">
                             <li>
-                                <a href="#beranda" onclick="moveToBeranda()">Beranda</a>
+                                <a href="<?= BASEURL; ?>/Home_controller#beranda">Beranda</a>
                             </li>
                             <li>
-                                <a href="#pengaduan" onclick="moveToPengaduan()">Pengaduan</a>
+                                <a href="<?= BASEURL; ?>/Home_controller#pengaduan">Pengaduan</a>
                             </li>
                             <li>
-                                <a href="#berita" onclick="moveToBerita()">Berita dan Informasi</a>
+                                <a href="<?= BASEURL; ?>/Home_controller#berita">Berita dan Informasi</a>
                             </li>
                             <li>
-                                <a href="#profil" onclick="moveToProfil()">Profil Desa Konoha</a>
+                                <a href="<?= BASEURL; ?>/Home_controller#profil">Profil Desa Konoha</a>
                             </li>
                             <li>
-                                <a href="keuangan.html">Keuangan</a>
-                            </li>
-                            <li>
-                                <a href="demografi.html">Demografi</a>
+                                <a href="<?= BASEURL; ?>/Statistik_controller">Statistik</a>
                             </li>
                         </div>
                     </div>
