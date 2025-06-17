@@ -5,6 +5,7 @@ class Home_controller extends Controllers {
         $data['title'] = "Konoha - Pengaduan";
         $data['kategori'] = $this->model('Pengaduan_model')->getKategori(); 
         $data['dataStatistik'] = $this->model('Statistik_model')->getStatistik($data);
+        $data['berita'] = $this->model('Berita_model')->getBerita();
 
         $this->view("templates/header", $data);
         $this->view("home/index", $data);
@@ -19,8 +20,17 @@ class Home_controller extends Controllers {
         if ($this->model('Pengaduan_model')->create($_POST) > 0) {
             header("Location: " . BASEURL . "/home");
             exit;
-        }
-        
+        } 
+    }
+
+    public function detailBerita($id_berita) {
+    
+        $data['title'] = "Konoha - Berita";
+        $data['berita'] = $this->model('Berita_model')->getBeritaById($id_berita);
+
+        $this->view("templates/header", $data);
+        $this->view("home/detailBerita", $data);
+        $this->view("templates/footer");
     }
 }
 

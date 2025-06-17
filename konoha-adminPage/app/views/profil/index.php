@@ -1,4 +1,4 @@
-<main class="flex-1 bg-white p-4">
+<main class="flex-1 overflow-y-auto p-4">
     <div class="grid grid-cols-1">
         <div class="bg-white border rounded-lg p-4 border-sky-800">
             <h2 class="font-bold text-xl mb-5 text-slate-950">Profil Desa</h2>

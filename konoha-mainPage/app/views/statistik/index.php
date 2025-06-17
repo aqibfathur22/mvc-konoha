@@ -1,5 +1,5 @@
 <!-- Statistik Section -->
-<section id="statistik" class="py-20">
+<section id="statistik" class="py-20 bg-white">
     <!-- pengaduan container -->
     <div class="container mx-auto px-2 mb-24 max-w-sm md:max-w-xl lg:max-w-4xl xl:max-w-6xl">
     <div class="container mx-auto px-4 text-center">

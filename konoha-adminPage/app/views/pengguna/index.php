@@ -1,4 +1,4 @@
-<main class="flex-1 bg-white p-4">
+<main class="flex-1 overflow-y-auto p-4">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                     <div class="lg:col-span-1 p-4 rounded-lg shadow border border-sky-800">
                         <div class="flex flex-col items-center gap-3">

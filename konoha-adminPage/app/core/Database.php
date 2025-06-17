@@ -2,7 +2,7 @@
 
 class Database {
     private $host = "localhost";
-    private $db_name = "dbkonoha";
+    private $db_name = "db_konoha";
     private $username = "root";
     private $password = "";
     public $conn;

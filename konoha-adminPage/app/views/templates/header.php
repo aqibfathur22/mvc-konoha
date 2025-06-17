@@ -17,7 +17,7 @@
                     <hr class="my-4 border-t-3" />
                     <nav class="mt-4">
                         <a 
-                            href="admin_beranda.html" 
+                            href="<?= BASEURL; ?>/Beranda_controller" 
                             class="<?= $data['berandaNav'] ?>">
                             <div class="w-5 h-5">
                                 <i class="fa-solid fa-home"></i>
@@ -25,7 +25,7 @@
                             Beranda
                         </a>
                         <a
-                            href="admin_pengguna.html"
+                            href="<?= BASEURL; ?>/Pengguna_controller"
                             class="<?= $data['penggunaNav'] ?>">
                             <div class="w-5 h-5">
                                 <i class="fa-solid fa-user"></i>
@@ -41,7 +41,7 @@
                             Berita
                         </a>
                         <a
-                            href="<?= BASEURL; ?>/Berita_controller"
+                            href="<?= BASEURL; ?>/Profil_controller"
                             class="<?= $data['profilNav'] ?>">
                             <div class="w-5 h-5">
                                 <i class="fa-solid fa-paper-plane"></i>
@@ -51,14 +51,6 @@
                     </nav>
                 </div>
                 <div class="mb-2">
-                    <a
-                        href="admin_pengaturan.html"
-                        class="flex items-center gap-2 p-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition">
-                        <div class="w-5 h-5">
-                            <i class="fa-solid fa-gear"></i>
-                        </div>
-                        Pengaturan
-                    </a>
                     <a href="#" class="flex items-center gap-2 p-2 mt-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition">
                         <div class="w-5 h-5">
                             <i class="fa-solid fa-right-from-bracket"></i>
