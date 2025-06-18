@@ -58,7 +58,7 @@
                     </nav>
                 </div>
                 <div class="mb-2">
-                    <a href="#" class="flex items-center gap-2 p-2 mt-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition">
+                    <a href="<?= BASEURL; ?>/Logout_controller" class="flex items-center gap-2 p-2 mt-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition">
                         <div class="w-5 h-5">
                             <i class="fa-solid fa-right-from-bracket"></i>
                         </div>

@@ -31,15 +31,15 @@
 
                 <div class="flex justify-between items-center text-sm">
                     <label class="flex items-center"> <input type="checkbox" class="mr-2" /> Ingat saya </label>
-                    <a href="#" class="text-blue-600 hover:underline">Lupa kata sandi?</a>
+                    <a href="<?=BASEURL?>/Login_controller" class="text-blue-600 hover:underline">masuk?</a>
                 </div>
 
                 <div class="grid grid-cols-1 h-5 mt-10 mb-5">
-                    <a
+                    <button 
+                        type="submit"
                         class="w-full bg-blue-600 text-white py-2 rounded-full hover:bg-blue-700 transition duration-300 text-center"
                         href="#"
-                        >Daftar</a
-                    >
+                        >Daftar</a>
                 </div>
 
                 <!-- <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300" href="admin_beranda.html">

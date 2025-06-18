@@ -28,6 +28,15 @@ class Beranda_controller extends Controllers {
         $data['profilNav'] = 'flex items-center gap-2 p-2 mt-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition';
         $data['kategoriNav'] = 'flex items-center gap-2 p-2 mt-2 group hover:bg-white/50 hover:text-slate-800 rounded-lg transition';
 
+        session_start();
+
+        // Cek apakah user sudah login
+        
+        // if (!isset($_SESSION['login'])) {
+        //     header('Location: ' . BASEURL . '/Login_controller');
+        //     exit;
+        // }
+
         $this->view('templates/header', $data);
         $this->view('beranda/index', $data);
         $this->view('templates/footer');
